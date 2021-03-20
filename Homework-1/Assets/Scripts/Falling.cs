@@ -5,11 +5,13 @@ using UnityEngine;
 public class Falling : MonoBehaviour
 {
     public Vector2 startPosition;
+    public Quaternion startRotation;
     public Rigidbody2D body;
 
     private void Start()
     {
         startPosition = transform.position;
+        startRotation = transform.rotation;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,6 +33,7 @@ public class Falling : MonoBehaviour
     {
         gameObject.SetActive(true);
         gameObject.transform.position = startPosition;
+        gameObject.transform.rotation = startRotation;
         body.bodyType = RigidbodyType2D.Kinematic;
     }
 
