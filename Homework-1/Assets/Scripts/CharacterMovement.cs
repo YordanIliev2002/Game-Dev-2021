@@ -58,4 +58,9 @@ public class CharacterMovement : MonoBehaviour
         lastJumpButtonState = inputY;
     }
 
+    public void RegisterArtificialJump()
+    {
+        countOfJumps = 1;
+    }
+
 }

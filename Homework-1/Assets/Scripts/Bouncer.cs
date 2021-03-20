@@ -9,6 +9,7 @@ public class Bouncer : MonoBehaviour
         GameObject other = collision.gameObject;
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<CharacterMovement>().RegisterArtificialJump();
             Rigidbody2D body = other.GetComponent<Rigidbody2D>();
             body.velocity = new Vector2(body.velocity.x, Mathf.Min(velocityLimit, Mathf.Abs(bounciness * body.velocity.y)));
         }
