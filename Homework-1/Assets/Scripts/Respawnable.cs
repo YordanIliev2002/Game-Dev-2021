@@ -21,7 +21,7 @@ public class Respawnable : MonoBehaviour
         }
     }
 
-    void Respawn()
+    public void Respawn()
     {
         gameObject.transform.position = spawnPoint;
         Rigidbody2D body = gameObject.GetComponent<Rigidbody2D>();
