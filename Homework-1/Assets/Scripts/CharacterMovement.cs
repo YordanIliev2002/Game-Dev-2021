@@ -8,6 +8,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float walkStrength = 3;
     private Rigidbody2D body;
     private GroundChecker groundChecker;
+    private int countOfJumps = 0;
+    private float lastJumpButtonState = 0;
 
     void Start()
     {
@@ -44,10 +46,16 @@ public class CharacterMovement : MonoBehaviour
 
     void TryJump()
     {
-        float inputY = Input.GetAxis("Vertical");
-        if(inputY > 0 & groundChecker.IsGrounded())
+        float inputY = Input.GetAxisRaw("Vertical");
+        if(inputY > 0 & inputY != lastJumpButtonState & countOfJumps < 2)
         {
+            countOfJumps++;
             body.velocity = new Vector2(body.velocity.x, jumpStrength);
         }
+        else if (inputY < 1 & groundChecker.IsGrounded()) { 
+            countOfJumps = 0;
+        }
+        lastJumpButtonState = inputY;
     }
+
 }
