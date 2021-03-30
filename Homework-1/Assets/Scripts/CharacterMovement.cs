@@ -6,8 +6,11 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float jumpStrength = 8;
     [SerializeField] private float walkStrength = 3;
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private Rigidbody2D body;
     private GroundChecker groundChecker;
+    private Respawnable respawnable;
     private int countOfJumps = 0;
     private float lastJumpButtonState = 0;
 
@@ -15,15 +18,22 @@ public class CharacterMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         groundChecker = GetComponentInChildren<GroundChecker>();
+        respawnable = GetComponent<Respawnable>();
     }
 
     void Update()
     {
+        if(!respawnable.IsAlive())
+        {
+            animator?.SetBool("isDead", true);
+            return;
+        }
         float velocityX = Input.GetAxis("Horizontal") * walkStrength;
         ApplyHorizontalMovement(velocityX);
         UpdateFacingDirection(velocityX);
 
         TryJump();
+        Animate();
     }
 
     void ApplyHorizontalMovement(float velocityX)
@@ -35,11 +45,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if (velocityX > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
         }
         else if(velocityX < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
         }
         // If we are not moving, we should not flip.
     }
@@ -63,4 +73,10 @@ public class CharacterMovement : MonoBehaviour
         countOfJumps = 1;
     }
 
+    void Animate()
+    {
+        animator?.SetBool("isDead", false);
+        animator?.SetBool("isGrounded", groundChecker.IsGrounded());
+        animator?.SetFloat("absVelocityX", Mathf.Abs(body.velocity.x));
+    }
 }

@@ -8,7 +8,7 @@ public class Lethal : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Respawnable>().Respawn();
+            collision.gameObject.GetComponent<Respawnable>().Die();
         }
     }
 }

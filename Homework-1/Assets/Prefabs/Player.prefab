@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2051082911280520702}
   - component: {fileID: 2051082911280520700}
   - component: {fileID: 2051082911280520703}
+  - component: {fileID: 425747248}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -52,6 +53,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -122,6 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpStrength: 9
   walkStrength: 3
+  animator: {fileID: 425747248}
+  spriteRenderer: {fileID: 2051082911280520697}
 --- !u!58 &2051082911280520702
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -177,6 +181,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yThreshhold: -10
+--- !u!95 &425747248
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051082911280520696}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 48d6fb794cd2ae5468c4561c5072f1ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2051082911506111647
 GameObject:
   m_ObjectHideFlags: 0
