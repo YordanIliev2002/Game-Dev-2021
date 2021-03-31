@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Respawnable : MonoBehaviour
 {
+    [SerializeField] private ConsumableBar healthBar;
     private Vector2 spawnPoint;
     public int yThreshhold = -10;
     private bool isAlive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,7 @@ public class Respawnable : MonoBehaviour
     {
         if(gameObject.transform.position.y < yThreshhold)
         {
+            Hurt();
             Respawn();
         }
     }
@@ -36,6 +40,7 @@ public class Respawnable : MonoBehaviour
 
     public void Die()
     {
+        Hurt();
         isAlive = false;
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         Invoke("Respawn", 2f);
@@ -44,5 +49,15 @@ public class Respawnable : MonoBehaviour
     public bool IsAlive()
     {
         return isAlive;
+    }
+
+    public void Hurt()
+    {
+        healthBar.ConsumeOne();
+        if (healthBar.GetCount() <= 0)
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
     }
 }

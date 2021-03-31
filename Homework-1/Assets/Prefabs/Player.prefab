@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc99b74cf2c036f4689df72ed927aebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   yThreshhold: -10
 --- !u!95 &425747248
 Animator:
