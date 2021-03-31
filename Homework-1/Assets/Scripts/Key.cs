@@ -6,15 +6,11 @@ public class Key : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        KeyCollector collector = collision.gameObject.GetComponent<KeyCollector>();
+        if (collector != null)
         {
-            Collect();
+            collector.CollectKey();
             Destroy(gameObject);
         }
-    }
-
-    void Collect()
-    {
-        print("Key collected");
     }
 }
