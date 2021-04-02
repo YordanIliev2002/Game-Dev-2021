@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Respawnable : MonoBehaviour
 {
     [SerializeField] private ConsumableBar healthBar;
+    [SerializeField] private GameManager gameManager;
     private Vector2 spawnPoint;
     public int yThreshhold = -10;
     private bool isAlive = true;
@@ -56,8 +57,7 @@ public class Respawnable : MonoBehaviour
         healthBar.ConsumeOne();
         if (healthBar.GetCount() <= 0)
         {
-            Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.name);
+            gameManager?.DisplayGameOver();
         }
     }
 }
