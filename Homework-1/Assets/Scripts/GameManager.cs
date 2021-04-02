@@ -19,4 +19,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(current.name);
         Time.timeScale = 1;
     }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
+    }
 }

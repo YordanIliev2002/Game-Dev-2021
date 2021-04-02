@@ -1922,7 +1922,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1125621149}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1030856877}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1125621149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2823,6 +2835,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 3916245242311427069, guid: 497cf80c4452027459594a89bdebfb13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3916245242311427070, guid: 497cf80c4452027459594a89bdebfb13,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2906,12 +2923,12 @@ PrefabInstance:
     - target: {fileID: 3916245242311427070, guid: 497cf80c4452027459594a89bdebfb13,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 107.788635
+      value: 107.78865
       objectReference: {fileID: 0}
     - target: {fileID: 3916245242311427070, guid: 497cf80c4452027459594a89bdebfb13,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30.600204
+      value: -30.60015
       objectReference: {fileID: 0}
     - target: {fileID: 3916245242311427070, guid: 497cf80c4452027459594a89bdebfb13,
         type: 3}
