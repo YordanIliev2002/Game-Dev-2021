@@ -634,6 +634,7 @@ GameObject:
   - component: {fileID: 426242982}
   - component: {fileID: 426242981}
   - component: {fileID: 426242984}
+  - component: {fileID: 426242985}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -721,6 +722,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 425747240}
   speed: 2
+--- !u!114 &426242985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426242980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c6440c1bba0a7479065e76363a8f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: db996d10ebea16747872e4814c473985, type: 2}
+  healthBar: {fileID: 2022807676}
 --- !u!1001 &444339807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1793,16 +1808,16 @@ Canvas:
   m_GameObject: {fileID: 1030856872}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 426242982}
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -192063183
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1030856876
@@ -2923,12 +2938,12 @@ PrefabInstance:
     - target: {fileID: 3916245242311427070, guid: 497cf80c4452027459594a89bdebfb13,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 107.78865
+      value: 107.788635
       objectReference: {fileID: 0}
     - target: {fileID: 3916245242311427070, guid: 497cf80c4452027459594a89bdebfb13,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30.60015
+      value: -30.600159
       objectReference: {fileID: 0}
     - target: {fileID: 3916245242311427070, guid: 497cf80c4452027459594a89bdebfb13,
         type: 3}
