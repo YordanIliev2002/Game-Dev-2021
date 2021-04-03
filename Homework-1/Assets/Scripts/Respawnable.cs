@@ -43,6 +43,10 @@ public class Respawnable : MonoBehaviour
 
     public void Die()
     {
+        if (!isAlive) 
+        {
+            return;
+        }
         Hurt();
         isAlive = false;
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
