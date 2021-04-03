@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2051082911280520700}
   - component: {fileID: 2051082911280520703}
   - component: {fileID: 425747248}
+  - component: {fileID: 425747249}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -181,6 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  gameManager: {fileID: 0}
+  distortionEffect: {fileID: 0}
   yThreshhold: -10
 --- !u!95 &425747248
 Animator:
@@ -201,6 +204,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &425747249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051082911280520696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f7d46ce33819d479e74e611e058187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyBar: {fileID: 0}
 --- !u!1 &2051082911506111647
 GameObject:
   m_ObjectHideFlags: 0

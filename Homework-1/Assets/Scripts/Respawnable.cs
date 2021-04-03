@@ -7,6 +7,7 @@ public class Respawnable : MonoBehaviour
 {
     [SerializeField] private ConsumableBar healthBar;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private HurtDistortionEffect distortionEffect;
     private Vector2 spawnPoint;
     public int yThreshhold = -10;
     private bool isAlive = true;
@@ -29,6 +30,7 @@ public class Respawnable : MonoBehaviour
 
     public void Respawn()
     {
+        distortionEffect?.setState(false);
         isAlive = true;
         gameObject.transform.position = spawnPoint;
         Rigidbody2D body = gameObject.GetComponent<Rigidbody2D>();
@@ -54,6 +56,7 @@ public class Respawnable : MonoBehaviour
 
     public void Hurt()
     {
+        distortionEffect?.setState(true);
         healthBar.ConsumeOne();
         if (healthBar.GetCount() <= 0)
         {

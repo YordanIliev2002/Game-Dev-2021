@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AfterRenderEffect : MonoBehaviour
+public class LowHealthVignette : MonoBehaviour
 {
     [SerializeField] Material material;
     [SerializeField] ConsumableBar healthBar;

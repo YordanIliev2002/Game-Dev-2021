@@ -609,19 +609,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2051082911400050384}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &425747249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425747240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6f7d46ce33819d479e74e611e058187, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyBar: {fileID: 3762756993866484886}
 --- !u!1 &426242980
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +622,7 @@ GameObject:
   - component: {fileID: 426242981}
   - component: {fileID: 426242984}
   - component: {fileID: 426242985}
+  - component: {fileID: 426242986}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -736,6 +724,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: db996d10ebea16747872e4814c473985, type: 2}
   healthBar: {fileID: 2022807676}
+--- !u!114 &426242986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426242980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659ee705c122eb04285471e296f44e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 540fd4c0772b6dd438f1b8d48bc89bca, type: 2}
 --- !u!1001 &444339807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2609,6 +2610,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 425747249, guid: 01f0595913f8eca46adc77a394fa2ef9, type: 3}
+      propertyPath: keyBar
+      value: 
+      objectReference: {fileID: 3762756993866484886}
     - target: {fileID: 2051082911280520696, guid: 01f0595913f8eca46adc77a394fa2ef9,
         type: 3}
       propertyPath: m_Name
@@ -2679,6 +2684,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1030856877}
+    - target: {fileID: 2051082911280520703, guid: 01f0595913f8eca46adc77a394fa2ef9,
+        type: 3}
+      propertyPath: distortionEffect
+      value: 
+      objectReference: {fileID: 426242986}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f0595913f8eca46adc77a394fa2ef9, type: 3}
 --- !u!1001 &2726623361983237133
