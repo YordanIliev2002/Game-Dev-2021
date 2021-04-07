@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject gameOverHUD;
 
+    private void Start()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Respawnable>().onHealthChange += checkPlayerHealth;
+    }
+
     public void DisplayGameOver()
     {
         Time.timeScale = 0;
@@ -24,5 +29,13 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
+    }
+
+    public void checkPlayerHealth(int health)
+    {
+        if(health < 1)
+        {
+            DisplayGameOver();
+        }
     }
 }

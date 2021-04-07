@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4621560889106234451}
   - component: {fileID: 4621560889106234450}
-  - component: {fileID: 4621560889106234453}
+  - component: {fileID: 8596826063294942474}
   m_Layer: 5
   m_Name: KeyBar
   m_TagString: Untagged
@@ -25,7 +25,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4621560889106234448}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &4621560889106234453
+--- !u!114 &8596826063294942474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,10 +75,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4621560889106234448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54c69c5d68b13d4f840f433f4884f9d, type: 3}
+  m_Script: {fileID: 11500000, guid: f32b3a4cd1329c942863f3da41ef6d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingCount: 0
 --- !u!1001 &80995565323713942
 PrefabInstance:
   m_ObjectHideFlags: 0

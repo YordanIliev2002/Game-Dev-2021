@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class KeyCollector : MonoBehaviour
 {
-    [SerializeField] private ConsumableBar keyBar;
+    private int keyCount = 0;
+    private int maxCount = 3;
+
+    public delegate void OnKeyCountChange(int count);
+    public OnKeyCountChange onKeyCountChange;
 
     public void CollectKey()
     {
-        keyBar.CollectOne();
+        if(keyCount < maxCount)
+        {
+            keyCount++;
+            if (onKeyCountChange != null) {
+                onKeyCountChange(keyCount); 
+            }
+        }
     }
 
     public bool TryConsumeKey()
     {
-        if(keyBar.GetCount() > 0)
+        if(keyCount > 0)
         {
-            keyBar.ConsumeOne();
+            keyCount--;
+            if (onKeyCountChange != null)
+            {
+                onKeyCountChange(keyCount);
+            }
             return true;
         }
         return false;

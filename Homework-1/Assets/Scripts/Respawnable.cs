@@ -5,20 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class Respawnable : MonoBehaviour
 {
-    [SerializeField] private ConsumableBar healthBar;
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] private HurtDistortionEffect distortionEffect;
+    [SerializeField] int maxHealth = 3;
+    private int health;
+    public delegate void OnHealthChange(int health);
+    public OnHealthChange onHealthChange;
+
+    private bool isAlive = true;
+    public delegate void OnIsAliveChange(bool isAlive);
+    public OnIsAliveChange onIsAliveChange;
+
     private Vector2 spawnPoint;
     public int yThreshhold = -10;
-    private bool isAlive = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         spawnPoint = gameObject.transform.position;
+        health = maxHealth;
+        if(onHealthChange != null)
+        {
+            onHealthChange(health);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(gameObject.transform.position.y < yThreshhold)
@@ -30,8 +38,11 @@ public class Respawnable : MonoBehaviour
 
     public void Respawn()
     {
-        distortionEffect?.setState(false);
         isAlive = true;
+        if (onIsAliveChange != null)
+        {
+            onIsAliveChange(isAlive);
+        }
         gameObject.transform.position = spawnPoint;
         Rigidbody2D body = gameObject.GetComponent<Rigidbody2D>();
         if(body)
@@ -49,6 +60,10 @@ public class Respawnable : MonoBehaviour
         }
         Hurt();
         isAlive = false;
+        if (onIsAliveChange != null)
+        {
+            onIsAliveChange(isAlive);
+        }
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         Invoke("Respawn", 2f);
     }
@@ -60,11 +75,10 @@ public class Respawnable : MonoBehaviour
 
     public void Hurt()
     {
-        distortionEffect?.setState(true);
-        healthBar.ConsumeOne();
-        if (healthBar.GetCount() <= 0)
+        health--;
+        if (onHealthChange != null)
         {
-            gameManager?.DisplayGameOver();
+            onHealthChange(health);
         }
     }
 }

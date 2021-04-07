@@ -5,11 +5,16 @@ using UnityEngine;
 public class LowHealthVignette : MonoBehaviour
 {
     [SerializeField] Material material;
-    [SerializeField] ConsumableBar healthBar;
+    private bool isActive = false;
+
+    private void Awake()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Respawnable>().onHealthChange += CheckPlayerHealth;
+    }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        if(healthBar.GetCount() <= 1)
+        if(isActive)
         {
             Graphics.Blit(source, destination, material);
         }
@@ -17,5 +22,10 @@ public class LowHealthVignette : MonoBehaviour
         {
             Graphics.Blit(source, destination);
         }
+    }
+
+    public void CheckPlayerHealth(int health)
+    {
+        isActive = health <= 1;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Consumable : MonoBehaviour
+public class ItemIcon : MonoBehaviour
 {
     [SerializeField] private Image image;
     [SerializeField] private Sprite full;

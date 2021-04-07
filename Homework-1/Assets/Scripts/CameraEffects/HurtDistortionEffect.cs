@@ -7,6 +7,11 @@ public class HurtDistortionEffect : MonoBehaviour
     [SerializeField] Material material;
     private bool isEnabled = false;
 
+    public void Awake()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Respawnable>().onIsAliveChange += checkPlayerState;
+    }
+
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
         if (isEnabled)
@@ -19,8 +24,8 @@ public class HurtDistortionEffect : MonoBehaviour
         }
     }
 
-    public void setState(bool shouldEnable)
+    public void checkPlayerState(bool playerState)
     {
-        isEnabled = shouldEnable;
+        isEnabled = !playerState;
     }
 }
