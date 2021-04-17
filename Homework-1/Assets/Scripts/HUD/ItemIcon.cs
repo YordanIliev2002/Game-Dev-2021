@@ -9,7 +9,7 @@ public class ItemIcon : MonoBehaviour
     [SerializeField] private Sprite full;
     [SerializeField] private Sprite empty;
     [SerializeField] private bool isFull = false;
-
+    [SerializeField] private Animator animator;
     public void Start()
     {
         ChangeState(isFull);
@@ -18,5 +18,9 @@ public class ItemIcon : MonoBehaviour
     {
         isFull = state;
         image.sprite = state ? full : empty;
+        if(animator)
+        {
+            animator.SetBool("isFull", isFull);
+        }
     }
 }
