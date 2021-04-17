@@ -10,7 +10,10 @@ public class Follow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(!objectToFollow)
+        {
+            objectToFollow = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     // Update is called once per frame
