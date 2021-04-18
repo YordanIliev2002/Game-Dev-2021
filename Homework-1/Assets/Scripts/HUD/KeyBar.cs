@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class KeyBar : ItemBar
 {
-    protected override void Awake()
+    protected override void OnEnable()
     {
-        base.Awake();
+        base.OnEnable();
         GameObject.FindGameObjectWithTag("Player").GetComponent<KeyCollector>().onKeyCountChange += UpdateStates;
     }
 }

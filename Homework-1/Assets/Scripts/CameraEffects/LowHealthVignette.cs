@@ -7,7 +7,7 @@ public class LowHealthVignette : MonoBehaviour
     [SerializeField] Material material;
     private bool isActive = false;
 
-    private void Awake()
+    private void OnEnable()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<Respawnable>().onHealthChange += CheckPlayerHealth;
     }

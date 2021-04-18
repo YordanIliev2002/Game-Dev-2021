@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HealthBar : ItemBar
 {
-    protected override void Awake()
+    protected override void OnEnable()
     {
-        base.Awake();
+        base.OnEnable();
         GameObject.FindGameObjectWithTag("Player").GetComponent<Respawnable>().onHealthChange += UpdateStates;
     }
 }

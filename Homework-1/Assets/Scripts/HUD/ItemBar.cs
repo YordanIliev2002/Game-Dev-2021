@@ -6,7 +6,7 @@ public class ItemBar : MonoBehaviour
 {
     private ItemIcon[] items;
 
-    protected virtual void Awake()
+    protected virtual void OnEnable()
     {
         items = GetComponentsInChildren<ItemIcon>();
     }

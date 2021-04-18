@@ -52,6 +52,10 @@ public class GameManager : MonoBehaviour
 
     public bool HasNextLevel()
     {
+        if(!SceneManager.GetActiveScene().name.StartsWith(LEVEL_PREFIX)) // In case we are in a procedural level for example
+        {
+            return false;
+        }
         int levelID = Int32.Parse(SceneManager.GetActiveScene().name.Substring(LEVEL_PREFIX.Length));
         levelID++;
         return Application.CanStreamedLevelBeLoaded(LEVEL_PREFIX + levelID);
