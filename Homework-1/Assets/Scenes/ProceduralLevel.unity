@@ -540,9 +540,9 @@ MonoBehaviour:
   - {fileID: 653771295192886648, guid: 279d0bb97fd58df408121aa15dc6af48, type: 3}
   bigRadius: 7.5
   smallRadius: 4.5
-  enemyChance: 0.2
+  enemyChance: 0.3
   springChance: 0.05
-  keyChance: 0.05
+  keyChance: 0.1
   spikesChance: 0.3
 --- !u!4 &1955282186
 Transform:
