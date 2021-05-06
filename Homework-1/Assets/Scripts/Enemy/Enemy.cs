@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float distanceThreshholdX = 6;
     [SerializeField] float distanceThreshholdY = 6;
     [SerializeField] float deathThreshholdY = -10;
+    private bool isAlive = true;
+    [SerializeField] GameObject deathSystem = null;
 
     void Start()
     {
@@ -34,6 +36,31 @@ public class Enemy : MonoBehaviour
         }
         animator?.SetBool("isPlayerClose", Mathf.Abs(distanceX) <= distanceThreshholdX && Mathf.Abs(distanceY) <= distanceThreshholdY);
         animator?.SetBool("isGrounded", groundChecker.IsGrounded());
+    }
+
+    public void Die()
+    {
+        if(isAlive)
+        {
+            isAlive = false;
+            animator?.SetTrigger("die");
+            if(deathSystem)
+            {
+                GameObject death = (GameObject)Instantiate(deathSystem, transform.position, Quaternion.identity);
+                Destroy(death, 4);
+                ParticleSystem ps = death.GetComponent<ParticleSystem>();
+                if(ps)
+                {
+                    ps.Play();
+                }
+
+            }
+        }
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 
 }

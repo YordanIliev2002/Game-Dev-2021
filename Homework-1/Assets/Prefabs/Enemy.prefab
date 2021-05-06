@@ -85,9 +85,9 @@ GameObject:
   - component: {fileID: 267355614775833439}
   - component: {fileID: 267355614775833438}
   - component: {fileID: 267355614775833409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,3 +256,5 @@ MonoBehaviour:
   distanceThreshholdX: 6
   distanceThreshholdY: 6
   deathThreshholdY: -10
+  deathSystem: {fileID: 6722671170471887953, guid: 5f19d8687c8ef1048b70c04330a19f57,
+    type: 3}
