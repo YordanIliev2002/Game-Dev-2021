@@ -5,6 +5,7 @@ Shader "Custom/SeeThroughShader"
 		_MainTex("Texture", 2D) = "white" {}
 		_SecondTex("Texture", 2D) = "white" {}
 		_Zoom("Zoom", Range(0, 10)) = 5
+		_BaseTransparency("BaseTransparency", Range(0, 1)) = 0.2
         _Color("Color", Color) = (0.5, 0.5, 0.5)
 	}
 	SubShader
@@ -37,6 +38,7 @@ Shader "Custom/SeeThroughShader"
             sampler2D _SecondTex;
             float4 _MainTex_ST;
             float _Zoom;
+            float _BaseTransparency;
             float4 _Color;
 
             v2f vert(appdata v)
@@ -61,6 +63,8 @@ Shader "Custom/SeeThroughShader"
                 float4 col = tex2D(_SecondTex, sampleCoords);
                 col.xyz = tex2D(_MainTex, i.uv).xyz;
                 col.xyz *= _Color;
+                col.w += _BaseTransparency;
+                col = saturate(col);
                 return col;
             }
             ENDCG
