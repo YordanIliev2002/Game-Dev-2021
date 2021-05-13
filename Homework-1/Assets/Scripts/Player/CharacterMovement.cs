@@ -89,11 +89,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if (velocityX > 0)
         {
-            spriteRenderer.flipX = false;
+            animator?.SetBool("shouldFlip", false);
         }
         else if(velocityX < 0)
         {
-            spriteRenderer.flipX = true;
+            animator?.SetBool("shouldFlip", true);
         }
         // If we are not moving, we should not flip.
     }

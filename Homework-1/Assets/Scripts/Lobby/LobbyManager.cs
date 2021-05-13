@@ -10,6 +10,16 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private TMP_InputField nameField;
     [SerializeField] private TMP_Text errorText;
 
+    public void Start()
+    {
+        Application.targetFrameRate = 160;
+        string name = PlayerPrefs.GetString("name");
+        if(name != null && name.Length > 0)
+        {
+            nameField.text = name;
+        }
+    }
+
     public void TryHost()
     {
         if (IsNameOk(nameField.text))
@@ -67,7 +77,7 @@ public class LobbyManager : MonoBehaviour
 
     private void LoadRoom()
     {
-        //SceneManager.LoadScene("MultiplayerRoom");
+        SceneManager.LoadScene("MultiplayerRoom");
     }
 
 }

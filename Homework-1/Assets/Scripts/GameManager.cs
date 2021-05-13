@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 160;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Respawnable>().onHealthChange += checkPlayerHealth;
     }
 

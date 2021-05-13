@@ -26,4 +26,9 @@ public class Follow : MonoBehaviour
             transform.Translate(dirScaled);
         }
     }
+
+    public void FollowObject(GameObject go)
+    {
+        objectToFollow = go;
+    }
 }
