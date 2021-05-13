@@ -18,4 +18,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("ProceduralLevel");
     }
+
+    public void PlayMultiplayer()
+    {
+        SceneManager.LoadScene("MultiplayerLobby");
+    }
 }
