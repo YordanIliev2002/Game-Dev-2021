@@ -36,10 +36,13 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
+        if(IsHost)
+        {
+            tint.Value = GameObject.FindGameObjectWithTag("MultiplayerManager").GetComponent<MultiplayerManager>().GetUniqueColor();
+        }
         if(IsOwner)
         {
             nickname.Value = PlayerPrefs.GetString("name");
-            tint.Value = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
             Camera.main.GetComponent<Follow>().FollowObject(gameObject);
         }
         else

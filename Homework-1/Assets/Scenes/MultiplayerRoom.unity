@@ -547,6 +547,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winnerScreen: {fileID: 7886205352220344914}
   winnerText: {fileID: 7886205352358126182}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.14415073, g: 0, b: 1, a: 1}
+  - {r: 0, g: 0.3773585, b: 0.03674579, a: 1}
+  - {r: 1, g: 0.5663458, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0.6419909, a: 1}
+  - {r: 1, g: 0, b: 0.9175911, a: 1}
+  - {r: 0, g: 0.7748232, b: 1, a: 1}
 --- !u!4 &1189230094
 Transform:
   m_ObjectHideFlags: 0

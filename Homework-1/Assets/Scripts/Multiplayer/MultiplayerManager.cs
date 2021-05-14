@@ -9,6 +9,7 @@ public class MultiplayerManager : MonoBehaviour
 {
     [SerializeField] private GameObject winnerScreen;
     [SerializeField] private TMP_Text winnerText;
+    [SerializeField] private List<Color> colors;
 
     private void Start()
     {
@@ -53,4 +54,16 @@ public class MultiplayerManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+
+    public Color GetUniqueColor()
+    {
+        if(colors == null || colors.Count == 0)
+        {
+            return Color.white;
+        }
+        int index = Random.Range(0, colors.Count);
+        Color result = colors[index];
+        colors.RemoveAt(index);
+        return result;
+    }
 }
