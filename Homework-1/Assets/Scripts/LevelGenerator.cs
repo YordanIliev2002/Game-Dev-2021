@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private int levelLength = 18;
+    [SerializeField] private bool autoGenerateOnStart = true;
 
     [SerializeField] private List<GameObject> prefabs;
     private Dictionary<string, GameObject> prefabsMap = new Dictionary<string, GameObject>();
@@ -23,14 +24,22 @@ public class LevelGenerator : MonoBehaviour
         {
             prefabsMap.Add(obj.name, obj);
         }
+        if(autoGenerateOnStart)
+        {
+            GenerateLevel(levelLength);
+        }
+    }
 
+
+    public void GenerateLevel()
+    {
         GenerateLevel(levelLength);
     }
 
-    void GenerateLevel(int platformCount)
+    public void GenerateLevel(int platformCount)
     {
         // Generate Start platform
-        Vector2 prevPos = Vector2.zero;
+        Vector2 prevPos = transform.position;
         Instantiate(prefabsMap["PlatformLarge"], prevPos, Quaternion.identity, transform);
 
         List<Vector2> otherPlatforms = new List<Vector2>();

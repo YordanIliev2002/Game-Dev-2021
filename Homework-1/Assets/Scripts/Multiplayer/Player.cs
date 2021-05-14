@@ -47,6 +47,8 @@ public class Player : NetworkBehaviour
         }
         else
         {
+            spriteRenderer.sortingLayerName = "Ghosts";
+            gameObject.tag = "Untagged";
             GetComponent<CharacterMovement>().enabled = false;
             Destroy(GetComponent<Rigidbody2D>());
             foreach(Collider2D collider in GetComponents<Collider2D>())

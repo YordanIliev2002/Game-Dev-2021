@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 2798123897
     locked: 0
+  - name: Ghosts
+    uniqueID: 433425377
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

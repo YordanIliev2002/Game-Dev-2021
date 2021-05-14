@@ -24,6 +24,11 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            return;
+        }
         if(transform.position.y < deathThreshholdY)
         {
             Destroy(gameObject);

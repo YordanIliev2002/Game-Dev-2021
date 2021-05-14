@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 267355614063024009}
   - component: {fileID: 267355614063024008}
   - component: {fileID: 267355614063024011}
+  - component: {fileID: 7708158625527121678}
   m_Layer: 11
   m_Name: GroundDetector
   m_TagString: Untagged
@@ -70,6 +71,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9bc241833f8f94691b615f6ae80a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7708158625527121678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267355614063024006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetworkInstanceId: 0
+  PrefabHash: 10766107604377285058
+  PrefabHashGenerator: GroundDetector
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
 --- !u!1 &267355614775833432
 GameObject:
   m_ObjectHideFlags: 0

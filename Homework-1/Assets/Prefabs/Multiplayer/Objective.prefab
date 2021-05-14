@@ -39,7 +39,7 @@ PrefabInstance:
     - target: {fileID: 4907451068725264626, guid: ead74e2fdaf19ef42b312c7aab8086f5,
         type: 3}
       propertyPath: m_Name
-      value: NetworkObjective
+      value: Objective
       objectReference: {fileID: 0}
     - target: {fileID: 4907451068725264631, guid: ead74e2fdaf19ef42b312c7aab8086f5,
         type: 3}
@@ -49,12 +49,12 @@ PrefabInstance:
     - target: {fileID: 4907451068725264631, guid: ead74e2fdaf19ef42b312c7aab8086f5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.553
       objectReference: {fileID: 0}
     - target: {fileID: 4907451068725264631, guid: ead74e2fdaf19ef42b312c7aab8086f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.632
       objectReference: {fileID: 0}
     - target: {fileID: 4907451068725264631, guid: ead74e2fdaf19ef42b312c7aab8086f5,
         type: 3}
