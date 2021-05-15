@@ -44,6 +44,7 @@ public class Player : NetworkBehaviour
         {
             nickname.Value = PlayerPrefs.GetString("name");
             Camera.main.GetComponent<Follow>().FollowObject(gameObject);
+            GameObject.FindGameObjectWithTag("ReadyChecker").GetComponent<ReadyChecker>().Join();
         }
         else
         {
